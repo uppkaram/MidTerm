@@ -23,12 +23,20 @@ public class Days {
      */
     public static void main(String[] args) {
          
-    Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
-    String code = in.next();
-    Weekdays t= new Weekdays();
-    t.nameOfDay(code); 
-    }// TODO code application logic here
-    
-    
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the day number (1-7):");
+        int code = in.nextInt();
+
+        if (code >= 1 && code <= 7) {
+            Day day = Day.getDay(code);
+            if (day != null) {
+                System.out.println("Day: " + day.getName());
+            } else {
+                System.out.println("Invalid day number!");
+            }
+        } else {
+            System.out.println("Invalid day number!");
+        }
+    }
 }
+
